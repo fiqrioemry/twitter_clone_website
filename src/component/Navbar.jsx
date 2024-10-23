@@ -1,80 +1,68 @@
 import React from "react";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaSearch, FaBell, FaMailBulk } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
+import { CgProfile } from "react-icons/cg";
+import { CiCircleMore } from "react-icons/ci";
 
 const Navbar = () => {
-  const navmenu = [
+  const navMenu = [
     {
-      icon: <FaHome />,
-      title: "Home",
+      icon: <BsTwitterX />,
+      path: "/",
+      title: "",
     },
     {
       icon: <FaHome />,
+      path: "/",
       title: "Home",
     },
     {
-      icon: <FaHome />,
-      title: "Home",
+      icon: <FaSearch />,
+      path: "/",
+      title: "Explore",
     },
     {
-      icon: <FaHome />,
-      title: "Home",
+      icon: <FaBell />,
+      path: "/",
+      title: "Notification",
     },
     {
-      icon: <FaHome />,
-      title: "Home",
+      icon: <FaMailBulk />,
+      path: "/",
+      title: "Message",
+    },
+    {
+      icon: <CgProfile />,
+      path: "/",
+      title: "Profile",
+    },
+    {
+      icon: <CiCircleMore />,
+      path: "/",
+      title: "More",
     },
   ];
   return (
-    <section>
-      <div className="flex flex-col w-1/4 h-full p-4 bg-red-500 border-r">
-        <h1 className="text-2xl font-bold mb-6">Twitter</h1>
-
-        <nav className="space-y-4">
-          <a
-            href="#"
-            className="block text-lg text-gray-800 hover:text-blue-500"
-          >
-            🏠 Home
-          </a>
-          <a
-            href="#"
-            className="block text-lg text-gray-800 hover:text-blue-500"
-          >
-            🔍 Explore
-          </a>
-          <a
-            href="#"
-            className="block text-lg text-gray-800 hover:text-blue-500"
-          >
-            🔔 Notifications
-          </a>
-          <a
-            href="#"
-            className="block text-lg text-gray-800 hover:text-blue-500"
-          >
-            ✉️ Messages
-          </a>
-          <a
-            href="#"
-            className="block text-lg text-gray-800 hover:text-blue-500"
-          >
-            💾 Bookmarks
-          </a>
-          <a
-            href="#"
-            className="block text-lg text-gray-800 hover:text-blue-500"
-          >
-            📁 Lists
-          </a>
-          <a
-            href="#"
-            className="block text-lg text-gray-800 hover:text-blue-500"
-          >
-            👤 Profile
-          </a>
-        </nav>
-      </div>
-    </section>
+    <div className="flex justify-center md:justify-end lg:justify-center  w-[15%] md:w-[20%] lg:w-[25%]  h-full px-8 py-8 bg-secondary  border-r border-white/30  text-white">
+      <nav className="space-y-2">
+        {navMenu.map((nav, index) => {
+          return (
+            <button
+              to={nav.path}
+              className="flex items-center px-3 py-3  rounded-full text-2xl hover:bg-gray-500/30"
+              key={index}
+            >
+              {nav.icon}
+              {!nav.title ? (
+                ""
+              ) : (
+                <div className=" pl-4 hidden lg:flex">{nav.title}</div>
+              )}
+            </button>
+          );
+        })}
+      </nav>
+    </div>
   );
 };
 
