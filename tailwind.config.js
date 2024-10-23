@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      DEFAULT: "Poppins",
+      DEFAULT: "Helvetica Neue",
       primary: "Poppins",
       secondary: "Manrope",
       tertiary: "Montserrat",

@@ -5,3 +5,27 @@
 body {
   @apply font-primary;
 }
+
+h1 {
+  @apply text-5xl font-bold tracking-[2px];
+}
+
+h2 {
+  @apply text-4xl font-bold tracking-[2px];
+}
+
+h3 {
+  @apply text-3xl font-semibold tracking-[1px];
+}
+
+h4 {
+  @apply text-2xl font-semibold tracking-[1px];
+}
+
+h5 {
+  @apply text-xl font-semibold tracking-[.5px];
+}
+
+.btn {
+  @apply px-4 py-2 rounded-full max-w-[300px];
+}
