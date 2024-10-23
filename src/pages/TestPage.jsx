@@ -1,73 +1,51 @@
 import React from "react";
-import { FaHome, FaSearch, FaBell, FaMailBulk } from "react-icons/fa";
-import { BsTwitterX } from "react-icons/bs";
-import { CgProfile } from "react-icons/cg";
-import { CiCircleMore } from "react-icons/ci";
 
-const ExamplePage = () => {
-  const navMenu = [
-    {
-      icon: <BsTwitterX />,
-      path: "/",
-      title: "",
-    },
-    {
-      icon: <FaHome />,
-      path: "/",
-      title: "Home",
-    },
-    {
-      icon: <FaSearch />,
-      path: "/",
-      title: "Explore",
-    },
-    {
-      icon: <FaBell />,
-      path: "/",
-      title: "Notification",
-    },
-    {
-      icon: <FaMailBulk />,
-      path: "/",
-      title: "Message",
-    },
-    {
-      icon: <CgProfile />,
-      path: "/",
-      title: "Profile",
-    },
-    {
-      icon: <CiCircleMore />,
-      path: "/",
-      title: "More",
-    },
-  ];
+const TestPage = () => {
   return (
-    <div className="flex h-screen bg-secondary">
-      {/* sidebar */}
-      <div className="flex justify-center md:justify-end lg:justify-center  w-[15%] md:w-[20%] lg:w-[25%]  h-full px-8 py-8 bg-secondary  border-r text-white">
-        <nav className="space-y-2">
-          {navMenu.map((nav, index) => {
-            return (
-              <button
-                to={nav.path}
-                className="flex items-center px-3 py-3  rounded-full text-2xl hover:bg-gray-500/30"
-                key={index}
-              >
-                {nav.icon}
-                {!nav.title ? (
-                  ""
-                ) : (
-                  <div className=" pl-4 hidden lg:flex">{nav.title}</div>
-                )}
-              </button>
-            );
-          })}
-        </nav>
+    <div className="flex">
+      {/* Sidebar */}
+      <div className="w-[20%] h-screen bg-black p-4">
+        <div className="text-2xl mb-4">
+          <i className="fab fa-twitter"></i>
+        </div>
+        <ul className="space-y-4">
+          <li className="flex items-center space-x-2">
+            <i className="fas fa-home"></i>
+            <span>Home</span>
+          </li>
+          <li className="flex items-center space-x-2">
+            <i className="fas fa-hashtag"></i>
+            <span>Explore</span>
+          </li>
+          <li className="flex items-center space-x-2">
+            <i className="fas fa-bell"></i>
+            <span>Notifications</span>
+            <span className="bg-blue-500 text-white rounded-full px-2">3</span>
+          </li>
+          <li className="flex items-center space-x-2">
+            <i className="fas fa-envelope"></i>
+            <span>Messages</span>
+          </li>
+          <li className="flex items-center space-x-2">
+            <i className="fas fa-robot"></i>
+            <span>Grok</span>
+          </li>
+          <li className="flex items-center space-x-2">
+            <i className="fas fa-user"></i>
+            <span>Profile</span>
+          </li>
+          <li className="flex items-center space-x-2">
+            <i className="fas fa-ellipsis-h"></i>
+            <span>More</span>
+          </li>
+        </ul>
+        <button className="bg-blue-500 text-white rounded-full px-4 py-2 mt-4">
+          Post
+        </button>
       </div>
 
-      {/* Konten Utama & Rightbar */}
-      <main className=" w-[85%] md:w-[80%] lg:w-[75%] flex flex-row h-screen overflow-y-auto">
+      {/* Main Content */}
+      <div className="flex w-[80%] h-screen overflow-y-scroll">
         {/* Feed */}
         <div className="flex-1 p-4">
           <div className="space-y-6 h-[350vh]">
@@ -142,9 +120,9 @@ const ExamplePage = () => {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 };
 
-export default ExamplePage;
+export default TestPage;

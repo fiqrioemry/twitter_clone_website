@@ -14,17 +14,18 @@ import ExamplePage from "./pages/ExamplePage";
 function Layout({ children }) {
   const location = useLocation();
   return (
-    <div>
-      {location.pathname !== "/" && <LeftBar />}
-      <div>{children}</div>
-      {location.pathname !== "/" && <RightBar />}
+    <div className="flex h-screen bg-secondary">
+      {location.pathname !== "/" && <navbar />}
+      <main className=" w-[85%] md:w-[80%] lg:w-[75%] flex flex-row h-screen overflow-y-auto">
+        {children}
+      </main>
     </div>
   );
 }
 
 function App() {
   return (
-    <main>
+    <div className="flex h-screen bg-secondary">
       <Router>
         <Layout>
           <Routes>
@@ -34,7 +35,7 @@ function App() {
           </Routes>
         </Layout>
       </Router>
-    </main>
+    </div>
   );
 }
 
