@@ -1,31 +1,9 @@
 import React from "react";
-import { FaHome } from "react-icons/fa";
-import { Link } from "react-router-dom";
-const LeftBar = () => {
-  const navmenu = [
-    {
-      icon: <FaHome />,
-      title: "Home",
-    },
-    {
-      icon: <FaHome />,
-      title: "Home",
-    },
-    {
-      icon: <FaHome />,
-      title: "Home",
-    },
-    {
-      icon: <FaHome />,
-      title: "Home",
-    },
-    {
-      icon: <FaHome />,
-      title: "Home",
-    },
-  ];
+
+const ExamplePage = () => {
   return (
-    <section>
+    <div className="flex h-screen bg-gray-100">
+      {" "}
       <div className="flex flex-col w-1/4 h-full p-4 bg-red-500 border-r">
         <h1 className="text-2xl font-bold mb-6">Twitter</h1>
 
@@ -74,8 +52,22 @@ const LeftBar = () => {
           </a>
         </nav>
       </div>
-    </section>
+      <div className="flex-1 p-4 in-h-screen overflow-y-scroll">
+        <h2 className="text-2xl font-semibold mb-6">Home</h2>
+        <div className="space-y-6 min-h-[3000px]">
+          <div className="p-4 bg-white shadow-sm rounded-lg">
+            <p className="text-gray-800">This is a tweet!</p>
+          </div>
+          <div className="p-4 bg-white shadow-sm rounded-lg">
+            <p className="text-gray-800">Another tweet here!</p>
+          </div>
+          <div className="p-4 bg-white shadow-sm rounded-lg">
+            <p className="text-gray-800">What's happening?</p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default LeftBar;
+export default ExamplePage;

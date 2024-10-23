@@ -9,6 +9,7 @@ import ProfilePage from "./pages/ProfilePage";
 import LeftBar from "./component/LeftBar";
 import RightBar from "./component/RightBar";
 import MainPage from "./pages/MainPage";
+import ExamplePage from "./pages/ExamplePage";
 
 function Layout({ children }) {
   const location = useLocation();
@@ -27,7 +28,7 @@ function App() {
       <Router>
         <Layout>
           <Routes>
-            <Route path="/" element={<MainPage />} />
+            <Route path="/" element={<ExamplePage />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/profile" element={<ProfilePage />} />
           </Routes>
